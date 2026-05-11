@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bombshell Car Rentals</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+    color: #ff6b6b;
+  }
+  
+  .modal p {
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .modal-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .modal-btn:hover {
+    background-color: #ff5252;
+  }
+</style>
 </head>
 <body>
 
@@ -35,16 +103,85 @@
 <section class="section">
 <h2>Premium Experience</h2>
 <div class="cards">
-<div class="card">Airport Pickups</div>
-<div class="card">Luxury Service</div>
-<div class="card">Tourist Friendly</div>
-<div class="card">24/7 Support</div>
+<div class="card" onclick="openModal('airport')">✈️ Airport Pickups</div>
+<div class="card" onclick="openModal('support')">📞 24/7 Support</div>
 </div>
 </section>
+
+<!-- Airport Pickups Modal -->
+<div id="airportModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('airport')">&times;</span>
+<h2>✈️ Airport Pickups</h2>
+<p>We offer convenient airport pickup and dropoff services. Our professional drivers will meet you at the airport with a sign bearing your name.</p>
+<p><strong>Service includes:</strong></p>
+<ul>
+<li>Free pickup from all Jamaica airports</li>
+<li>Professional, courteous drivers</li>
+<li>Clean, luxury vehicles</li>
+<li>Real-time tracking</li>
+</ul>
+<p><strong>Contact us:</strong></p>
+<p>WhatsApp: <a href="https://wa.me/18763969303">+1 (876) 396-9303</a></p>
+<p>Email: bombshellcarrentals@gmail.com</p>
+<a href="booking.html" class="modal-btn">Book Airport Pickup</a>
+</div>
+</div>
+
+<!-- 24/7 Support Modal -->
+<div id="supportModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('support')">&times;</span>
+<h2>📞 24/7 Support</h2>
+<p>We're available round the clock to assist you with any questions or concerns during your rental period.</p>
+<p><strong>Support includes:</strong></p>
+<ul>
+<li>Roadside assistance</li>
+<li>Vehicle support & guidance</li>
+<li>Emergency contact available 24/7</li>
+<li>Quick response times</li>
+</ul>
+<p><strong>Contact us:</strong></p>
+<p>WhatsApp: <a href="https://wa.me/18763969303">+1 (876) 396-9303</a></p>
+<p>Email: bombshellcarrentals@gmail.com</p>
+<a href="contact.html" class="modal-btn">Contact Support</a>
+</div>
+</div>
 
 <footer>
 <p>© 2025 Bombshell Car Rentals</p>
 </footer>
+
+<script>
+function openModal(modalType) {
+  if (modalType === 'airport') {
+    document.getElementById('airportModal').style.display = 'block';
+  } else if (modalType === 'support') {
+    document.getElementById('supportModal').style.display = 'block';
+  }
+}
+
+function closeModal(modalType) {
+  if (modalType === 'airport') {
+    document.getElementById('airportModal').style.display = 'none';
+  } else if (modalType === 'support') {
+    document.getElementById('supportModal').style.display = 'none';
+  }
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  let airportModal = document.getElementById('airportModal');
+  let supportModal = document.getElementById('supportModal');
+  
+  if (event.target == airportModal) {
+    airportModal.style.display = 'none';
+  }
+  if (event.target == supportModal) {
+    supportModal.style.display = 'none';
+  }
+}
+</script>
 
 </body>
 </html>
