@@ -1,0 +1,23 @@
+
+HOW TO PUT WEBSITE ONLINE:
+
+1. Go to Netlify.com
+2. Create a free account
+3. Drag and drop this ZIP folder
+4. Your website instantly goes live
+
+HOW TO CONTROL WEBSITE:
+- Edit HTML files anytime
+- Replace logo.png anytime
+- Add future cars inside gallery.html
+- Add payment systems later
+- Add booking automation later
+
+NEXT LEVEL FEATURES YOU CAN ADD:
+- Stripe payments
+- Live booking calendar
+- Admin login system
+- Real database
+- Mobile app
+- Instagram feed
+- Online contracts
